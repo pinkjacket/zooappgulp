@@ -25,7 +25,7 @@ export class AppComponent {
     this.selectedAnimal = clickedAnimal;
   }
 
-  finishedEditing() {
+  finishedEditing(){
     this.selectedAnimal = null;
   }
 

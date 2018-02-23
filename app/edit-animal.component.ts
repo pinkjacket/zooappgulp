@@ -15,7 +15,7 @@ import { Animal } from './animal.model';
           <input [(ngModel)]="childSelectedAnimal.age">
           <label>Enter new number of caretakers:</label>
           <input [(ngModel)]="childSelectedAnimal.caretakers">
-          <button (click)="finishedEditing()">Done</button>
+          <button (click)="doneButtonClicked()">Done</button>
         </div>
       </div>
   `
@@ -23,4 +23,9 @@ import { Animal } from './animal.model';
 
 export class EditAnimalComponent {
   @Input() childSelectedAnimal: Animal;
+  @Output() doneButtonClickedSender = new EventEmitter();
+
+  doneButtonClicked() {
+    this.doneButtonClickedSender.emit();
+  }
 }
