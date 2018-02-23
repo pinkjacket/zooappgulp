@@ -7,7 +7,9 @@ import { Animal } from './animal.model';
   <div class="container">
   <h1>Zoo Animal Tracker</h1>
 
-  <animal-list [childAnimalList]="masterAnimalList"></animal-list>
+  <animal-list [childAnimalList]="masterAnimalList" (clickSender)="editAnimal($event)"></animal-list>
+  <br>
+  <edit-animal [childSelectedAnimal]="selectedAnimal" (doneButtonClickedSender)="finishedEditing()"></edit-animal>
   </div>
   `
 })
@@ -16,6 +18,15 @@ export class AppComponent {
   masterAnimalList: Animal[] = [
     new Animal('Jean', 'Fruit Bat', 8, 'Fruitarian', 'Beach', 2, 'Male', 'Bright colors', 'Being annoyed'),
     new Animal('Isaac', 'Boar', 10, 'Omnivore', 'Forest cabin', 2, 'Male', 'Relaxing', 'Being deceived')
-  ]
+  ];
+  selectedAnimal: null;
+
+  editAnimal(clickedAnimal){
+    this.selectedAnimal = clickedAnimal;
+  }
+
+  finishedEditing() {
+    this.selectedAnimal = null;
+  }
 
 }
