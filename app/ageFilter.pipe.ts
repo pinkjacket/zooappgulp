@@ -8,13 +8,24 @@ import { Animal } from './animal.model';
 
 
 export class AgeFilterPipe implements PipeTransform {
-  transform(input: Animal[]){
+  transform(input: Animal[], targetAge){
     let output: Animal[] = [];
+    if(targetAge === "youngAnimals"){
+      for (let i = 0; i < input.length; i++){
+        if (input[i].age < 2){
+          output.push(input[i]);
+        }
+      }
+    return output;
+  } else if(targetAge === "matureAnimals"){
     for (let i = 0; i < input.length; i++){
-      if (input[i].age < 2){
+      if (input[i].age >= 2){
         output.push(input[i]);
       }
     }
     return output;
+  } else {
+      return input;
+    }
   }
 }
