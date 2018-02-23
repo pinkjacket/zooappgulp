@@ -1,0 +1,23 @@
+{
+  "name": "angulargulp",
+  "description": "angular project with gulp",
+  "main": "",
+  "authors": [
+    "James Donlan"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/pinkjacket/zooappgulp",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.0.0"
+  },
+  "resolutions": {
+    "bootstrap": "3.3.7"
+  }
+}
