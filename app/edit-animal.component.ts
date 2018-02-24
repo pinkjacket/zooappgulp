@@ -15,6 +15,8 @@ import { Animal } from './animal.model';
           <input [(ngModel)]="childSelectedAnimal.age">
           <label>Enter new number of caretakers:</label>
           <input [(ngModel)]="childSelectedAnimal.caretakers">
+          <label>Enter new location:</label>
+          <input [(ngModel)]="childSelectedAnimal.location">
           <button (click)="doneButtonClicked()">Done</button>
         </div>
       </div>
